@@ -9,7 +9,7 @@ const Home = () => {
     const categories =useLoaderData()
     return (
         <div>
-      <Heading title ={'another Heading'}/>
+    
         <Banner/>
         {/* Hero section */}
 
@@ -22,7 +22,7 @@ const Home = () => {
         subtitle = 'Choose your desired coffe category through specific coffes fit in your taste'/>
 
         {/* Categories section */}
-        
+
       <Categories categories={categories}/>
         {/* Dynamic nested componenets */}
         <Outlet/>
