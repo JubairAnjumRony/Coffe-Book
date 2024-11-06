@@ -11,9 +11,9 @@ const MainLayout = () => {
             <Navbar/>
             </div>
             <div className="min-h-[calc(100vh-228px)] py-12 container mx-auto px-12"> 
-                <Outlet/>
-                </div>{/* Dynamic section */}
-            {/* Footer section */}
+                <Outlet/>   {/* Dynamic section */}
+                </div>          
+      
             <Footer/>
         </div>
     );
