@@ -17,11 +17,11 @@ const Categories = ({categories}) => {
                 >{c.category}
                 </NavLink>))
         }
-        <div className="grid grid-cols-3 gap-4 my-12 px-4">
+        {/* <div className="grid grid-cols-3 gap-4 my-12 px-4">
    
 
         </div>
-        
+         */}
   </div>
        
     );

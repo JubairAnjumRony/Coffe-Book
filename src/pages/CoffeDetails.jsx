@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import nutritionImg from './../assets/nutrition.png';
-import { addFavorite } from "../Utils/Index";
+import { addFavorite, getAllFavourities } from "../Utils/Index";
 
 
 const CoffeDetails = () => {
     const data = useLoaderData();
     const {id} = useParams();
     const [coffee,setCoffee] = useState({});
+    const [favorite,setFavorite] = useState(false)
     useEffect(()=>{
         const singleData = data.find(coffee => coffee.id == id)
         setCoffee(singleData);
+        const favorites =getAllFavourities();
+        const isExist = favorites.find(item =>item.id == singleData.id)
+        if(isExist) {
+          setFavorite(true)
+        }
     },[data,id])
     const {
         name,
@@ -22,9 +28,12 @@ const CoffeDetails = () => {
         rating,
         popularity,
       } = coffee;
-
+//   Handle addFavorite btn click
       const handleFavorite = (coffee) =>{
         addFavorite(coffee)
+        // getAllFavourities(coffee);
+        setFavorite(true);
+        
       }
       
     return (
@@ -45,7 +54,7 @@ const CoffeDetails = () => {
         </div>
         <div>
           <button
-            // disabled={isFavorite}
+            disabled={favorite}
             onClick={() => handleFavorite(coffee)}
             className='btn btn-warning'
           >

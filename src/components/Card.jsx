@@ -4,7 +4,7 @@ const Card = ({coffee}) => {
     const  {name,image,category,origin,type,id,rating,popularity} = coffee || {}
     return (
         <div className='flex relative'>
-            <Link to={`/coffee/${id}`}
+            <Link to={`/coffee/${id}`}   /*this sets path to coffe details when clicked on a card */
             className='transition hover:scale-105 shadow-xl rounded-xl overflow-hidden'>
 
                <figure className='w-full h-48 overflow-hidden'>

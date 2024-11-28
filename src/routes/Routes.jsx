@@ -29,7 +29,7 @@ const routes = createBrowserRouter([
                  {
                     path: '/',
                     element: <CoffeCards />,
-                    loader: () => fetch('../coffees.json'),
+                    loader: () => fetch('../coffees.json'),   /*this part is used to show 6 default coffes in home page */
                   },
                 ],
             },

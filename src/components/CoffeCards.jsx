@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 
 const CoffeCards = () => {
-    const navigate = useNavigate();  //this is used to navigate through pages
+    const navigate = useNavigate(); //this is used to navigate through pages
     const data = useLoaderData();   //this has all the 12 coffees
     console.log('coffes are:',data);
     const {category} = useParams();  //params is used to to get the dynamic part and use it in component
@@ -27,7 +27,7 @@ const CoffeCards = () => {
             
         } ,[category,data])    //dependency means which things are outside of this useEffect()
 
-        console.log(data);
+       
         
     return (
         <>
