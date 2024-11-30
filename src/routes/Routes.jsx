@@ -15,7 +15,7 @@ const routes = createBrowserRouter([
             {
                 path:'/',
                 element:<Home/>,
-                loader: () => fetch('../categories.json'),
+                loader: () => fetch('../categories.json'), /*this will just simply show three categoires */
                 children: [
 
                   
@@ -23,7 +23,7 @@ const routes = createBrowserRouter([
                     {
                         path: '/category/:category',
                         element: <CoffeCards/>,
-                        loader: ()=> fetch('../coffees.json'),
+                        loader: ()=> fetch('../coffees.json'), /*this part will show coffeecards accroding to their category */
                  },
 
                  {

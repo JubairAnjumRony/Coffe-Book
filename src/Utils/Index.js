@@ -30,4 +30,14 @@ const addFavorite = coffee =>{
     localStorage.setItem('favorites',JSON.stringify(favorites));
     toast.success("successfully added");
 }
-export {addFavorite,getAllFavourities}
+
+// Remove a coffee from local storage ew
+ const removeFavorite = id =>{
+    // get all previously saved coffee data
+    const favorites = getAllFavourities()
+    const remaining = favorites.filter(coffee => coffee.id != id)
+    localStorage.setItem('favorites',JSON.stringify(remaining))
+    toast.success('successfully Removed!');
+ }
+
+export {addFavorite,getAllFavourities,removeFavorite}
